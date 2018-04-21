@@ -1,10 +1,17 @@
+'use strict';
+
+
 const config = {
   mode: 'development',
-  entry: "./src/app.js",
+  devtool: 'source-map',
+  entry: "./src/main.js",
   module: {
     rules: [
-      {test: /\.js$/, loader: 'babel-laoder'},
-      {test: /\.css$/, loader: ['style-laoder', 'css-loader']}
+      {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
+      {test: /\.css$/, loader: ['style-loader', 'css-loader']}
     ]
   }
-}
+};
+
+module.exports = config;
+

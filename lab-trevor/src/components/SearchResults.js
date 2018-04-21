@@ -5,18 +5,18 @@ class SearchResults extends React.Component {
     super(props);
   }
 
-  listMovies(){
-    return this.props.results.map((result, i) => {
-      return <li key={i}>{result}</li>
+  listResults(){
+    return this.props.topics.map((result, i) => {
+      return <a href={result.data.url} target="_blank"><li key={i}>{result.data.title}</li></a>
     })
   }
 
 
   render(){
     return <div>
-      <p>Found {this.props.results.length} Movies</p>
+      <p>Found {this.props.topics.length} </p>
       <ul>
-        {this.listMovies}
+        {this.listResults()}
       </ul>
     </div>
   }
